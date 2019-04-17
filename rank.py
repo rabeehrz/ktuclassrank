@@ -34,7 +34,7 @@ name = table[2].tolist() + table[5].tolist()
 for i in range(len(regnum)):
     names[str(regnum[i])] = str(name[i])
 
-
+# Remove and adding some names because the Class Roll List was not read properly
 names['TVE18CS017'] = 'DHANESH P S'
 names['TVE18CS018'] = 'DHRUV ELDHO PETER'
 names['TVE18CS021'] = 'GOKUL K'
@@ -53,9 +53,12 @@ del(names['TVE18CS033 MEGHA NANDA J'])
 del(names['Register No'])
 #########################################
 
+#The result was split across 5 pages
 tables = camelot.read_pdf('result_TVE.pdf', pages='38,39,40,41,42')
 
 regno = {}
+
+#Looping through all the tables
 for i in tables[1:]:
     df = i.df
     reg = df[0].tolist()
@@ -76,10 +79,12 @@ for i in tables[1:]:
         gpa /= float(tc)
         regno[str(reg[i])] = gpa
 
+#Student left the College :)
 del(regno['TVE18CS034'])
+
 prev_rank = 1
 rank = 1
-import operator
+
 sorted_ranklist = sorted(regno.items(), key=operator.itemgetter(1))[::-1]
 for i in range(len(sorted_ranklist)):
     if i != 0:
