@@ -1,7 +1,7 @@
 KTU Class Rank
 ==============
 
-This is a Python script that reads the KTU Semester Rank List and the class Roll List and it give the GPA and the Rank of the students in a class.
+This is a Python script that reads the KTU Semester Rank List and the class Roll List and it gives the GPA and the Ranks of the students in a class.
 
 Requirements
 ------------
