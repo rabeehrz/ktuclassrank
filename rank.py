@@ -17,6 +17,7 @@ gp = {
     'I': 0
 }
 
+#Credits for this semester entered in order of slots
 credits = [4,4,4,3,3,3,1,1,1]
 tc = sum(credits)
 # CREATING REGNO:NAME DICTIONARY
