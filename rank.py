@@ -85,12 +85,14 @@ del(regno['TVE18CS034'])
 
 prev_rank = 1
 rank = 1
+people_passed = 0
 
 sorted_ranklist = sorted(regno.items(), key=operator.itemgetter(1))[::-1]
 for i in range(len(sorted_ranklist)):
+    people_passed += 1
     if i != 0:
         if(sorted_ranklist[i-1][1] != sorted_ranklist[i][1]):
-            rank+=1
+            rank=people_passed
         print str(rank) + ":" + names[sorted_ranklist[i][0]] + ":" + str(sorted_ranklist[i][1])
     else:
         print str(rank) + ":" + names[sorted_ranklist[i][0]] + ":" + str(sorted_ranklist[i][1])
